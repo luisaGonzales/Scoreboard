@@ -31,7 +31,7 @@ const Header = (props) => {
 					</tr>
 				</table>
 			</div>
-			<h1><strong>Scoreboard</strong></h1>
+			<h1><strong>{props.title}</strong></h1>
 			<div className="stopwatch">
 				<h2>STOPWATCH</h2>
 				<div className="stopwatch-time">
@@ -86,12 +86,10 @@ function showPlayers (players){
   });
 }
 
-
-
 const Application = ({title, players}) => {
    return (
      <div className="scoreboard">
-        <Header players={players}/>
+        <Header players={players} title={title}/>
         <PlayerList players={players}/>
         <PlayerForm />
       </div>      

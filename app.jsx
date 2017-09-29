@@ -27,7 +27,7 @@ const Header = (props) => {
 					</tr>
 					<tr>
 						<td>Total Points: </td>
-						<td className="letter"><strong>{sumScore(scores)}</strong></td>
+						<td className="letter"><strong>{sumScore(props.players)}</strong></td>
 					</tr>
 				</table>
 			</div>
@@ -92,9 +92,8 @@ function getScores (players){
 	});
 }
 
-const scores = getScores(players);
-
-function sumScore (scores){
+function sumScore (players){
+	let scores = getScores(players);
 	return scores.reduce((prev,current) =>{
 		return prev + current;
 	},0);

@@ -19,10 +19,29 @@ let players = [
 const Header = (props) => {
   return(
     <div className="header">
-      <section className="stats">
-        <div>PLAYERS: {props.players.length}</div><br/>
-        <div>TOTAL POINTS: </div>
-      </section>
+      <div className="stats">
+        <table>
+          <tr>
+            <td>Player: </td>
+            <td className="letter"><strong>{props.players.length}</strong></td>
+          </tr>
+          <tr>
+            <td>Total Points: </td>
+            <td className="letter"><strong>180</strong></td>
+          </tr>
+        </table>
+      </div>
+      <h1>Scoreboard</h1>
+      <div className="stopwatch">
+        <h2>STOPWATCH</h2>
+        <div className="stopwatch-time">
+          0
+        </div>
+        <div>
+          <button><strong>START</strong></button>
+          <button><strong>RESET</strong></button>
+        </div>
+      </div>
     </div>
   );
 } 

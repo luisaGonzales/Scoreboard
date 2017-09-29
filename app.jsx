@@ -17,64 +17,73 @@ let players = [
 ];
 
 const Header = (props) => {
-  return(
-    <div className="header">
-      <div className="stats">
-        <table>
-          <tr>
-            <td>Player: </td>
-            <td className="letter"><strong>{props.players.length}</strong></td>
-          </tr>
-          <tr>
-            <td>Total Points: </td>
-            <td className="letter"><strong>180</strong></td>
-          </tr>
-        </table>
-      </div>
-      <h1>Scoreboard</h1>
-      <div className="stopwatch">
-        <h2>STOPWATCH</h2>
-        <div className="stopwatch-time">
-          0
-        </div>
-        <div>
-          <button><strong>START</strong></button>
-          <button><strong>RESET</strong></button>
-        </div>
-      </div>
-    </div>
-  );
+  	return(
+		<div className="header">
+			<div className="stats">
+				<table>
+					<tr>
+						<td>Player: </td>
+						<td className="letter"><strong>{props.players.length}</strong></td>
+					</tr>
+					<tr>
+						<td>Total Points: </td>
+						<td className="letter"><strong>180</strong></td>
+					</tr>
+				</table>
+			</div>
+			<h1>Scoreboard</h1>
+			<div className="stopwatch">
+				<h2>STOPWATCH</h2>
+				<div className="stopwatch-time">
+					0
+				</div>
+				<div>
+					<button><strong>START</strong></button>
+					<button><strong>RESET</strong></button>
+				</div>
+			</div>
+		</div>
+  	);
 } 
 
 const PlayerList = (props) => {
   return (
-    <div>
-      <ul>
-        {mostrarPlayers(props.players)}
-      </ul>
-  </div>
+	  <div>{showPlayers(props.players)}</div> 
   );
 }
 
 const PlayerForm = (props) => {
   return (
-    <div>
-      <input type="number"/>
-      
+    <div className="add-player-form">
+		<form>
+			<input type="text"placeholder="ENTER A NAME"/>
+            <input type="submit" value="ADD PLAYER"/>
+		</form>
     </div>
   );
 }
 
-function mostrarPlayers (players){
+function showPlayers (players){
   return players.map((player, index)=>{
     return (
-
-      <li key={index}>
-        <p>{player.name}</p>
-        <label className="counter-action.decrement">-</label>
-        <span className="counter-score">{player.score}</span>
-        <span className="counter-action.increment">+</span>
-      </li>
+		<div class="player">
+			<ul class="player-name">
+				<li>
+					<center><strong>{player.name}</strong></center> 
+				</li>
+			</ul>
+			<div class="player-score counter">
+				<div class="counter-action decrement">
+					-
+				</div>
+				<div class="counter-score">
+				{player.score}
+				</div>
+				<div class=" counter-action increment">
+					+
+				</div>
+			</div>
+		</div>
     );
   });
 }

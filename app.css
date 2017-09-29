@@ -193,6 +193,7 @@ body {
 .add-player-form input[type=text]::-webkit-input-placeholder {
   color: #666;
   letter-spacing: 2px;
+  font-size: 0.8em;
 }
 
 .add-player-form input[type=text]:focus {

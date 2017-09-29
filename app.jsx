@@ -1,19 +1,19 @@
 let players = [
-  {
-    name: "Jim Hoskins",
-    score: 31,
-    id: 1,
-  },
-   {
-    name: "Andree Hoskins",
-    score: 35,
-    id: 2,
-  },
-   {
-    name: "Alena Hoskins",
-    score: 42,
-    id: 3,
-  },
+	{
+		name: "Jim Hoskins",
+		score: 31,
+		id: 1,
+	},
+	{
+		name: "Andree Hoskins",
+		score: 35,
+		id: 2,
+	},
+	{
+		name: "Alena Hoskins",
+		score: 42,
+		id: 3,
+	},
 ];
 
 const Header = (props) => {
@@ -68,14 +68,14 @@ function showPlayers (players){
     return (
 		<div className="player">
 			<div className="player-name">
-					<center><strong>{player.name}</strong></center> 
+				<center><strong>{player.name}</strong></center> 
 			</div>
 			<div className="player-score counter">
 				<div className="counter-action decrement">
 					-
 				</div>
 				<div className="counter-score">
-				{player.score}
+					{player.score}
 				</div>
 				<div className=" counter-action increment">
 					+

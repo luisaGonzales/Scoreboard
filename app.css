@@ -3,6 +3,7 @@ body {
   font-family: arial;
   color: #FAFAFA;
   text-transform: uppercase;
+  background-image: url(fondo.jpg);
 }
 
 .scoreboard {

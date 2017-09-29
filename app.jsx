@@ -31,7 +31,7 @@ const Header = (props) => {
 					</tr>
 				</table>
 			</div>
-			<h1>Scoreboard</h1>
+			<h1><strong>Scoreboard</strong></h1>
 			<div className="stopwatch">
 				<h2>STOPWATCH</h2>
 				<div className="stopwatch-time">

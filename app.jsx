@@ -37,6 +37,15 @@ const PlayerList = (props) => {
   );
 }
 
+const PlayerForm = (props) => {
+  return (
+    <div>
+      <input type="number"/>
+      
+    </div>
+  );
+}
+
 function mostrarPlayers (players){
   return players.map((player, index)=>{
     return (
@@ -58,7 +67,7 @@ const Application = ({title, players}) => {
      <div className="scoreboard">
         <Header players={players}/>
         <PlayerList players={players}/>
-        {/* <PlayerForm /> */}
+        <PlayerForm />
       </div>      
    );
 }

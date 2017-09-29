@@ -66,20 +66,18 @@ const PlayerForm = (props) => {
 function showPlayers (players){
   return players.map((player, index)=>{
     return (
-		<div class="player">
-			<ul class="player-name">
-				<li>
+		<div className="player">
+			<div className="player-name">
 					<center><strong>{player.name}</strong></center> 
-				</li>
-			</ul>
-			<div class="player-score counter">
-				<div class="counter-action decrement">
+			</div>
+			<div className="player-score counter">
+				<div className="counter-action decrement">
 					-
 				</div>
-				<div class="counter-score">
+				<div className="counter-score">
 				{player.score}
 				</div>
-				<div class=" counter-action increment">
+				<div className=" counter-action increment">
 					+
 				</div>
 			</div>

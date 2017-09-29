@@ -16,24 +16,48 @@ let players = [
   },
 ];
 
-const Header = (props) =>{
+const Header = (props) => {
   return(
-    <div>
-      <div className="scoreboard">
-        <p>PLAYERS{props.players.length}</p>
-        <p></p>
-      </div>
+    <div className="header">
+      <section className="stats">
+        <div>PLAYERS: {props.players.length}</div><br/>
+        <div>TOTAL POINTS: </div>
+      </section>
     </div>
   );
 } 
+
+const PlayerList = (props) => {
+  return (
+    <div>
+      <ul>
+        {mostrarPlayers(props.players)}
+      </ul>
+  </div>
+  );
+}
+
+function mostrarPlayers (players){
+  return players.map((player, index)=>{
+    return (
+
+      <li key={index}>
+        <p>{player.name}</p>
+        <label className="counter-action.decrement">-</label>
+        <span className="counter-score">{player.score}</span>
+        <span className="counter-action.increment">+</span>
+      </li>
+    );
+  });
+}
 
 
 
 const Application = ({title, players}) => {
    return (
-     <div>
+     <div className="scoreboard">
         <Header players={players}/>
-        {/* <PlayerList players={players}/> */}
+        <PlayerList players={players}/>
         {/* <PlayerForm /> */}
       </div>      
    );

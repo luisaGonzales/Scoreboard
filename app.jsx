@@ -27,7 +27,7 @@ const Header = (props) => {
 					</tr>
 					<tr>
 						<td>Total Points: </td>
-						<td className="letter"><strong>180</strong></td>
+						<td className="letter"><strong>{sumScore(scores)}</strong></td>
 					</tr>
 				</table>
 			</div>
@@ -54,18 +54,18 @@ const PlayerList = (props) => {
 
 const PlayerForm = (props) => {
   return (
-    <div className="add-player-form">
+	<div className="add-player-form">
 		<form>
 			<input type="text"placeholder="ENTER A NAME"/>
-            <input type="submit" value="ADD PLAYER"/>
+			<input type="submit" value="ADD PLAYER"/>
 		</form>
-    </div>
+	</div>
   );
 }
 
 function showPlayers (players){
   return players.map((player, index)=>{
-    return (
+	return (
 		<div className="player">
 			<div className="player-name">
 				<center><strong>{player.name}</strong></center> 
@@ -82,17 +82,31 @@ function showPlayers (players){
 				</div>
 			</div>
 		</div>
-    );
+	);
   });
+}
+
+function getScores (players){
+	return players.map((player) =>{
+		return (player.score);
+	});
+}
+
+const scores = getScores(players);
+
+function sumScore (scores){
+	return scores.reduce((prev,current) =>{
+		return prev + current;
+	},0);
 }
 
 const Application = ({title, players}) => {
    return (
-     <div className="scoreboard">
-        <Header players={players} title={title}/>
-        <PlayerList players={players}/>
-        <PlayerForm />
-      </div>      
+	 <div className="scoreboard">
+		<Header players={players} title={title}/>
+		<PlayerList players={players}/>
+		<PlayerForm />
+	  </div>      
    );
 }
 
